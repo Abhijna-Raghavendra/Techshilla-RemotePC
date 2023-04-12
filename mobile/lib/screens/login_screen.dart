@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/utils/google_auth.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -17,7 +19,14 @@ class LoginScreen extends StatelessWidget {
                 color: Color(0xfff4f5fc)),
           ),
           TextButton.icon(
-              onPressed: () {},
+              onPressed: () async {
+                final provider =
+                    Provider.of<GoogleSignInProvider>(context, listen: false);
+                await provider.googleLogin();
+                if (provider.verify == true) {
+                  Navigator.pushReplacementNamed(context, '/home');
+                }
+              },
               icon: const Icon(Icons.login_rounded),
               label: const Text(
                 'Login with Google',
