@@ -8,7 +8,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff24293e),
+      backgroundColor: const Color(0xff000000),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Image.asset(
@@ -47,7 +47,7 @@ class LoginScreen extends StatelessWidget {
               ),
               style: const ButtonStyle(
                 foregroundColor: MaterialStatePropertyAll(Color(0xfff4f5fc)),
-                backgroundColor: MaterialStatePropertyAll(Color(0xff8ebbff)),
+                backgroundColor: MaterialStatePropertyAll(Color(0xff20b46a)),
               )),
         ]),
       ),
