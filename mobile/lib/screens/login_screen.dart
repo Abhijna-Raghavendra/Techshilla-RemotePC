@@ -11,12 +11,22 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: const Color(0xff24293e),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Image.asset(
+            'assets/images/logo.png',
+            width: 140,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
           const Text(
-            'Remote PC',
+            'LinkPC',
             style: TextStyle(
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
                 color: Color(0xfff4f5fc)),
+          ),
+          const SizedBox(
+            height: 80,
           ),
           TextButton.icon(
               onPressed: () async {
