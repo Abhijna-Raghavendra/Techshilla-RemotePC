@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile/utils/google_auth.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const TasksWidget(),
     const PowerWidget()
   ];
-  final user = FirebaseAuth.instance.currentUser!;
+
   int _page = 0;
   @override
   Widget build(BuildContext context) {
@@ -46,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
       ),
       body: Center(
-        child: widgetList[_page],
+        child: SingleChildScrollView(child: widgetList[_page]),
       ),
       bottomNavigationBar: BottomAppBar(
         height: 65,
