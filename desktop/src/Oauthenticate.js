@@ -3,6 +3,7 @@ import { auth,provider } from './firebase'
 import { signInWithPopup } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom'
 import SignInButton from './SignInButton';
+import { Button } from '@mui/material/';
 
 
 function Oauthenticate() {
@@ -20,7 +21,7 @@ function Oauthenticate() {
   return (
     <div>
       {value?<SignInButton/>:
-<button onClick={handleClick}>Sign In With Google</button>
+<Button variant="contained" onClick={handleClick}>Sign In With Google</Button>
       }
     </div>
   )
