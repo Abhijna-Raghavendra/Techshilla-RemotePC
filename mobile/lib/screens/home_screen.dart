@@ -33,7 +33,7 @@ class MobileHome extends StatelessWidget {
                             final provider = Provider.of<GoogleSignInProvider>(
                                 context,
                                 listen: false);
-                            await provider.googleLogin();
+                            await provider.googleLogout();
                             Navigator.pushReplacementNamed(context, '/');
                           },
                           child: const Center(
