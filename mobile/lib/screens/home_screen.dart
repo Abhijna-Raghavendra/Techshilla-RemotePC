@@ -91,7 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () async {
                   final provider =
                       Provider.of<GoogleSignInProvider>(context, listen: false);
-                  await provider.googleLogin();
+                  await provider.googleLogout();
+
                   Navigator.pushReplacementNamed(context, '/');
                 },
                 icon: const Icon(
