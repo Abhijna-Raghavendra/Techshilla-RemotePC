@@ -14,10 +14,12 @@ class TasksWidget extends StatefulWidget {
 class _TasksWidgetState extends State<TasksWidget> {
   List _taskList = [];
   late SSHClient _client;
+  var parsedData;
+  bool chromeVisible = true;
 
   Future getTaskList() async {
     Object data = await getUserData();
-    var parsedData = json.decode(json.encode(data));
+    parsedData = json.decode(json.encode(data));
     _client = await connect(
         parsedData['IPv4'], parsedData['user_name'], parsedData['pswd']);
     List deviceTaskList = await tasklist(_client);
@@ -28,13 +30,13 @@ class _TasksWidgetState extends State<TasksWidget> {
 
   @override
   void initState() {
+    chromeVisible = true;
     getTaskList();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    print(_taskList.toSet());
     return Column(
       children: [
         SizedBox(
@@ -65,7 +67,10 @@ class _TasksWidgetState extends State<TasksWidget> {
                               color: Color(0xfff4f5fc), fontSize: 10),
                         ),
                         IconButton(
-                            onPressed: () {
+                            onPressed: () async {
+                              _client = await connect(parsedData['IPv4'],
+                                  parsedData['user_name'], parsedData['pswd']);
+
                               taskKill(_client,
                                   _taskList[(index + 2) * 10 + 1].toString());
                             },
@@ -80,7 +85,6 @@ class _TasksWidgetState extends State<TasksWidget> {
           ),
         ),
       ],
-
     );
   }
 }
