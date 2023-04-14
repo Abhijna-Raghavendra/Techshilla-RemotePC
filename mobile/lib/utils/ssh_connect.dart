@@ -54,3 +54,11 @@ Future restart(SSHClient client) async {
   await session.done;
   await shell.done;
 }
+
+Future taskKill(SSHClient client, String task) async {
+  final shell = await client.shell();
+
+  final session = await client.execute('taskkill /IM $task /F');
+  await session.done;
+  await shell.done;
+}
