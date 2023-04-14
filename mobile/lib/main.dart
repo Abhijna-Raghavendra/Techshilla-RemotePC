@@ -20,7 +20,7 @@ class MobileApp extends StatelessWidget {
       child: MaterialApp(
         routes: {
           '/': (context) => const LoginScreen(),
-          '/home': (context) => const MobileHome(),
+          '/home': (context) => const HomeScreen(),
         },
       ));
 }
