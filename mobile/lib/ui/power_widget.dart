@@ -13,9 +13,13 @@ class PowerWidget extends StatefulWidget {
 
 class _PowerWidgetState extends State<PowerWidget> {
   late SSHClient _client;
+  String _deviceName = '';
   Future establishConnection() async {
     Object data = await getUserData();
     var parsedData = json.decode(json.encode(data));
+    setState(() {
+      _deviceName = parsedData['device_name'];
+    });
     _client = await connect(
         parsedData['IPv4'], parsedData['user_name'], parsedData['pswd']);
   }
@@ -35,12 +39,33 @@ class _PowerWidgetState extends State<PowerWidget> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Text(
+            _deviceName,
+            style: const TextStyle(
+                color: Color(0xfff4f5fc),
+                fontSize: 22,
+                fontWeight: FontWeight.bold),
+          ),
+        ),
+        Padding(
           padding: const EdgeInsets.all(10.0),
-          child: Image.asset('assets/images/battery.png'),
+          child: Image.asset(
+            'assets/images/battery.png',
+            width: screenWidth * 0.7,
+          ),
+        ),
+        const Text(
+          'Battery Status',
+          style: TextStyle(
+            color: Color(0xfff4f5fc),
+            fontSize: 14,
+          ),
         ),
         Row(
           children: [
             Card(
+              elevation: 7,
               margin: EdgeInsets.only(
                 left: screenWidth * 0.05,
                 right: screenWidth * 0.025,
@@ -68,6 +93,7 @@ class _PowerWidgetState extends State<PowerWidget> {
               ),
             ),
             Card(
+                elevation: 7,
                 margin: EdgeInsets.only(
                   left: screenWidth * 0.025,
                   right: screenWidth * 0.05,
@@ -98,6 +124,7 @@ class _PowerWidgetState extends State<PowerWidget> {
         Row(
           children: [
             Card(
+              elevation: 7,
               margin: EdgeInsets.only(
                   left: screenWidth * 0.05,
                   right: screenWidth * 0.025,
@@ -124,6 +151,7 @@ class _PowerWidgetState extends State<PowerWidget> {
               ),
             ),
             Card(
+                elevation: 7,
                 margin: EdgeInsets.only(
                     left: screenWidth * 0.025,
                     right: screenWidth * 0.05,

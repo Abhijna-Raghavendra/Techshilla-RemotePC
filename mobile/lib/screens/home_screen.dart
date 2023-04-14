@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff000000),
+      backgroundColor: const Color(0xff24293e),
       appBar: AppBar(
         foregroundColor: const Color(0xfff4f5fc),
         backgroundColor: const Color(0xff24293e),
@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: BottomAppBar(
         height: 65,
-        color: const Color(0xff20b46a),
+        color: const Color(0xff8ebbff),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: const Icon(
                   Icons.account_circle_outlined,
                   size: 40,
-                  color: Color(0xff000000),
+                  color: Color(0xff24293e),
                 )),
             IconButton(
                 onPressed: () {
@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: const Icon(
                   Icons.list_alt_outlined,
                   size: 40,
-                  color: Color(0xff000000),
+                  color: Color(0xff24293e),
                 )),
             IconButton(
                 onPressed: () {
@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: const Icon(
                   Icons.settings_power_outlined,
                   size: 40,
-                  color: Color(0xff000000),
+                  color: Color(0xff24293e),
                 )),
             IconButton(
                 onPressed: () async {
