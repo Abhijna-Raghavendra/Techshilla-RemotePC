@@ -6,15 +6,15 @@ import {BrowserRouter,Routes,Route} from "react-router-dom";
 
 function App() {
   return (
-    // <div className="App">
-    //   <Oauth/>
-    // </div>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Oauthenticate/>}/>
-        <Route path='/home' element={<SignInButton/>}/>
-      </Routes>
-    </BrowserRouter>
+    <div className="App">
+      <Oauthenticate/>
+    </div>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path='/' element={<Oauthenticate/>}/>
+    //     <Route path='/home' element={<SignInButton/>}/>
+    //   </Routes>
+    // </BrowserRouter>
   );
 }
 
