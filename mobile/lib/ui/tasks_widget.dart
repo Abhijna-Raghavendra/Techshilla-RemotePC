@@ -31,22 +31,6 @@ class _TasksWidgetState extends State<TasksWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        itemCount: (_taskList.length ~/ 10) - 2,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(
-              _taskList[index * 10 + 1].toString(),
-              style: const TextStyle(color: Color(0xffffffff)),
-            ),
-            subtitle: Text(
-              _taskList[index * 10 + 9].toString(),
-              style: const TextStyle(color: Color(0xffffffff)),
-            ),
-          );
-        },
-      ),
-    );
+    return Text(_taskList.toString());
   }
 }
