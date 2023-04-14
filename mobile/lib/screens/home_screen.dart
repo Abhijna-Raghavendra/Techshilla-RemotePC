@@ -92,6 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   final provider =
                       Provider.of<GoogleSignInProvider>(context, listen: false);
                   await provider.googleLogout();
+
                   Navigator.pushReplacementNamed(context, '/');
                 },
                 icon: const Icon(
