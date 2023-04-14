@@ -4,6 +4,7 @@ import { signInWithPopup } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom'
 import SignInButton from './SignInButton';
 import { Button } from '@mui/material/';
+import applogo from './assets/app_logo.png';
 
 
 function Oauthenticate() {
@@ -21,7 +22,12 @@ function Oauthenticate() {
   return (
     <div>
       {value?<SignInButton/>:
-<Button variant="contained" onClick={handleClick}>Sign In With Google</Button>
+        <div>
+        <div>
+        <img  src={applogo} width="250" height="250" style={{marginTop:'5em', marginBottom:'2em'}}/>
+        </div>
+        <Button variant="contained" onClick={handleClick}>Sign In With Google</Button>
+        </div>
       }
     </div>
   )

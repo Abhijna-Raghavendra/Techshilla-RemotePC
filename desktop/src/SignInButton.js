@@ -59,13 +59,6 @@ import { Button, Card,CardContent, FormLabel, TextField } from '@mui/material'
     }
     return (
         <div>
-            {/* <form>
-                <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname" value="John"><br>
-                <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname" value="Doe"><br><br>
-                <input type="submit" value="Submit">
-            </form>  */}
             <Card className='connection' sx={{ mx: '30em',mt:'10em' }}>
                 <CardContent>
             <form>
@@ -73,7 +66,7 @@ import { Button, Card,CardContent, FormLabel, TextField } from '@mui/material'
                     <FormLabel>Add Device</FormLabel>
                 </div>
                 <div>
-                <TextField id="outlined-basic" label="Username" sx={{ mb:'1em' }}  variant="outlined" onChange={handleName} />
+                <TextField id="outlined-basic" label="Username" sx={{ mb:'1em', mt:'1em' }}  variant="outlined" onChange={handleName} />
                 </div>
                 <div>
                 <TextField id="outlined-basic" label="Password" sx={{ mb:'1em' }} variant="outlined" onChange={handlePassword} />
