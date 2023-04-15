@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import { Auth } from 'firebase/auth'
 import { Button, Card,CardContent, FormLabel, TextField } from '@mui/material'
+import LogoutIcon from '@mui/icons-material/Logout'
 
     function SignInButton() {
         const [user_name,setUser_name]=useState('')
@@ -59,7 +60,7 @@ import { Button, Card,CardContent, FormLabel, TextField } from '@mui/material'
     }
     return (
         <div>
-            <Card className='connection' sx={{ mx: '30em',mt:'10em' }}>
+            <Card className='connection' sx={{ mx: '30%',mt:'10%' }}>
                 <CardContent>
             <form>
                 <div>
@@ -83,7 +84,7 @@ import { Button, Card,CardContent, FormLabel, TextField } from '@mui/material'
             </form>
             </CardContent>
             </Card>
-            <Button variant="contained" onClick={logout}>Logout</Button>
+            <Button variant="contained" sx={{mt:'1em'}} startIcon={<LogoutIcon/>} onClick={logout}>Logout</Button>
         </div>
       )
 }
