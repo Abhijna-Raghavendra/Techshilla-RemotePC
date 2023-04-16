@@ -1,3 +1,4 @@
 echo "hello world"
-ipconfig > info.txt
+info =$(ipconfig > info.txt)
+echo %info%
 # netstat -rn > info.txt

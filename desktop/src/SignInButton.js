@@ -8,6 +8,7 @@ import LogoutIcon from '@mui/icons-material/Logout'
         const [pswd,setPswd]=useState('')
         const [IPv4,setIPv4]=useState('')
         const [device_name,setDevice_name]=useState('')
+        const [network_name,setNetwork_name]=useState('')
 
     const handleName=(e)=>{
         setUser_name(e.target.value);
@@ -21,6 +22,9 @@ import LogoutIcon from '@mui/icons-material/Logout'
     const handleDevicename=(e)=>{
         setDevice_name(e.target.value);
     }
+    const handleNetworkename=(e)=>{
+        setNetwork_name(e.target.value);
+    }
 
 
     const sendData=async(e)=>{
@@ -33,6 +37,7 @@ import LogoutIcon from '@mui/icons-material/Logout'
             body:JSON.stringify({
                 IPv4,
                 device_name,
+                network_name,
                 pswd,
                 user_name
             })
@@ -43,6 +48,7 @@ import LogoutIcon from '@mui/icons-material/Logout'
             setPswd('')
             setIPv4('')
             setDevice_name('')
+            setNetwork_name('')
             alert("data stored")
         }
     }
@@ -77,6 +83,9 @@ import LogoutIcon from '@mui/icons-material/Logout'
                 </div>
                 <div>
                 <TextField id="outlined-basic" label="Device Name" sx={{ mb:'1em' }} variant="outlined" onChange={handleDevicename} />
+                </div>
+                <div>
+                <TextField id="outlined-basic" label="Network Name" sx={{ mb:'1em' }} variant="outlined" onChange={handleNetworkename} />
                 </div>
                 <div>
                 <Button variant="contained" onClick={sendData}>Connect</Button>

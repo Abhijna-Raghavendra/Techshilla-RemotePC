@@ -14,11 +14,14 @@ Wireless LAN adapter Local Area Connection* 26:
 
 Wireless LAN adapter Wi-Fi:
 
-   Connection-specific DNS Suffix  . : iitr.ac.in
+   Connection-specific DNS Suffix  . : 
+   IPv6 Address. . . . . . . . . . . : 2401:4900:30d7:dfdf:fe10:e8a2:82ef:ac43
+   Temporary IPv6 Address. . . . . . : 2401:4900:30d7:dfdf:9c06:dd93:7197:72c5
    Link-local IPv6 Address . . . . . : fe80::9f02:93b6:3753:da22%50
-   IPv4 Address. . . . . . . . . . . : 10.76.0.79
-   Subnet Mask . . . . . . . . . . . : 255.255.255.0
-   Default Gateway . . . . . . . . . : 10.76.0.1
+   IPv4 Address. . . . . . . . . . . : 172.20.10.3
+   Subnet Mask . . . . . . . . . . . : 255.255.255.240
+   Default Gateway . . . . . . . . . : fe80::b067:b5ff:fe98:bf64%50
+                                       172.20.10.1
 
 Ethernet adapter Bluetooth Network Connection:
 
